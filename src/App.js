@@ -8,37 +8,38 @@ function App() {
   const inputRef = useRef(null); 
   const resultRef = useRef(null); 
   const [result, setResult] = useState(0); 
-  // const [input, setInput] = useState(""); 
+  const [input, setInput] = useState(0); 
+
 
   function plus(e) { 
     e.preventDefault(); 
     setResult((result) => result + Number(inputRef.current.value)); 
   }; 
  
-  // function minus(e) { 
-  // 	e.preventDefault();
-  //   setResult((result) => result - Number(inputRef.current.value));
-  // };
+  function minus(e) { 
+  	e.preventDefault();
+    setResult((result) => result - Number(inputRef.current.value));
+  };
  
-  // function times(e) { 
-  //   e.preventDefault();
-  //   setResult((result) => result * Number(inputRef.current.value));
-  // }; 
+  function times(e) { 
+    e.preventDefault();
+    setResult((result) => result * Number(inputRef.current.value));
+  }; 
  
-  // function divide(e) { 
-  //   e.preventDefault();
-  //   setResult((result) => result / Number(inputRef.current.value));
-  // };
+  function divide(e) { 
+    e.preventDefault();
+    setResult((result) => result / Number(inputRef.current.value));
+  };
  
-  // function resetInput(e) { 
-  //   e.preventDefault();
-  //   setInput("");
-  // }; 
+  function resetInput(e) { 
+    e.preventDefault();
+    inputRef.current.value = "";
+  }; 
  
-  // function resetResult(e) { 
-  //   e.preventDefault();
-  //   setResult(0);
-  // }; 
+  function resetResult(e) { 
+    e.preventDefault();
+    setResult(0);
+  }; 
  
   return ( 
     <div className="App"> 
@@ -56,11 +57,11 @@ function App() {
           placeholder="Type a number" 
         /> 
         <button onClick={plus}>add</button> 
-        {/* <button onClick={minus}>minus</button>  
+        <button onClick={minus}>minus</button>  
         <button onClick={times}>times</button> 
-        <button onClick={divide}>devide</button> 
+        <button onClick={divide}>divide</button> 
         <button onClick={resetInput}>reset input</button> 
-        <button onClick={resetResult}>reset result</button>  */}
+        <button onClick={resetResult}>reset result</button>  
       </form> 
     </div> 
   ); 
